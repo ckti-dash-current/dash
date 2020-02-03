@@ -196,6 +196,7 @@ void CStakingManager::UpdatedBlockTip(const CBlockIndex* pindex)
 void CStakingManager::DoMaintenance(CConnman& connman)
 {
     if (!fEnableStaking) return;
+    if (pwallet->IsLocked(true)) return;
 
     const Consensus::Params& params = Params().GetConsensus();
 
@@ -227,6 +228,7 @@ void CStakingManager::DoMaintenance(CConnman& connman)
             pblocktemplate = BlockAssembler(Params()).CreateNewBlock(CScript(), coinstakeTxPtr, coinstakeInputPtr, nCoinStakeTime);
         } catch (const std::exception& e) {
             LogPrint(BCLog::STAKING, "%s: error creating block - %s", __func__, e.what());
+            return;
         }
     } else {
         return;
@@ -234,8 +236,7 @@ void CStakingManager::DoMaintenance(CConnman& connman)
 
     if (!pblocktemplate.get())
         return;
-
-    CBlock* pblock = &pblocktemplate->block;
+    CBlock *pblock = &pblocktemplate->block;
 
     // Sign block
     CKeyID keyID;
