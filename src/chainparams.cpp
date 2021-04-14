@@ -565,6 +565,7 @@ public:
 
         // Wagerr specific parameters
         // Proof of Stake parameters
+        consensus.nPosStartHeight = 201;
         consensus.posLimit = uint256S("000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 24
         consensus.nPivxProtocolV2StartHeight = std::numeric_limits<int>::max(); // 'no DGW'
         // ATP parameters
@@ -717,6 +718,7 @@ public:
 
         // Wagerr specific parameters
         // Proof of Stake parameters
+        consensus.nPosStartHeight = 201;
         consensus.posLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
         consensus.nPivxProtocolV2StartHeight = std::numeric_limits<int>::max(); // 'no DGW'
         // ATP parameters
@@ -862,6 +864,7 @@ public:
         consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
+        consensus.nPosStartHeight = 201;
         consensus.posLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
         consensus.nPivxProtocolV2StartHeight = std::numeric_limits<int>::max(); // 'no DGW'
         // ATP parameters
