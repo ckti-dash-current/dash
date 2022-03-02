@@ -6,6 +6,7 @@
 #include "consensus/tokengroups.h"
 #include "dstencode.h"
 #include "wgraddrenc.h"
+#include "logging.h"
 #include "rpc/server.h"
 #include <streams.h>
 #include "tokens/tokengroupmanager.h"
