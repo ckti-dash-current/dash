@@ -197,6 +197,7 @@ struct Params {
 
     /** ATP parameters */
     int64_t ATPStartHeight;
+    std::string WgrAddrPrefix;
 
     /** Zerocoin - retired functionality */
     int64_t nZerocoinStartHeight;
