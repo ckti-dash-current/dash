@@ -5,10 +5,10 @@
 #include "wgraddrenc.h"
 #include "bech32.h"
 #include "chainparams.h"
+#include "consensus/tokengroups.h"
 #include "pubkey.h"
 #include "script/script.h"
 #include "utilstrencodings.h"
-#include "validation.h"
 
 #include <boost/variant/static_visitor.hpp>
 
@@ -103,6 +103,16 @@ std::string EncodeWgrAddr(const std::vector<uint8_t> &id, const WgrAddrType addr
 std::string EncodeWgrAddr(const CTxDestination &dst, const CChainParams &params)
 {
     return boost::apply_visitor(WgrAddrEncoder(params), dst);
+}
+
+std::string EncodeTokenGroup(const CTokenGroupID &grp, const CChainParams &params)
+{
+    return EncodeWgrAddr(grp.bytes(), WgrAddrType::GROUP_TYPE, params);
+}
+
+std::string EncodeTokenGroup(const CTokenGroupID &grp)
+{
+    return EncodeTokenGroup(grp, Params());
 }
 
 CTxDestination DecodeWgrAddr(const std::string &addr, const CChainParams &params)
