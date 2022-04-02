@@ -360,7 +360,7 @@ public:
         consensus.nGovernanceMinQuorum = 10;
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
-        consensus.V16DeploymentHeight = 99999999;
+        consensus.V16DeploymentHeight = std::numeric_limits<int64_t>::max();
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("000001364c4ed20f1b240810b5aa91fee23ae9b64b6e746b594b611cf6d8c87b");
         consensus.BIP65Height = consensus.V16DeploymentHeight;
@@ -389,8 +389,8 @@ public:
         consensus.nStakeMinDepth = 600;
         consensus.nStakeMinAge = 60 * 60; // 1 hour
         consensus.nBlockStakeModifierV1A = 1000;
-        consensus.nBlockStakeModifierV2 = std::numeric_limits<int>::max();
         consensus.nBlockStakeModifierV2 = consensus.V16DeploymentHeight;
+        consensus.strCarbonOffsetAddress = "sYG1qGUtbTdNRYtFsKvnY3GvuauF3eVwhT";
         // ATP parameters
         consensus.ATPStartHeight = std::numeric_limits<int64_t>::max();
         consensus.WgrAddrPrefix = "wgr";
@@ -554,7 +554,7 @@ public:
         consensus.nGovernanceMinQuorum = 1;
         consensus.nGovernanceFilterElements = 500;
         consensus.nMasternodeMinimumConfirmations = 1;
-        consensus.V16DeploymentHeight = 99999999;
+        consensus.V16DeploymentHeight = std::numeric_limits<int>::max();
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256S("0000065432f43b3efb23bd0f63fe33d00d02a5f36233fe1b982c08274d58ef12");
         consensus.BIP65Height = consensus.V16DeploymentHeight;
@@ -584,8 +584,9 @@ public:
         consensus.nStakeMinAge = 60 * 60; // 1 hour
         consensus.nBlockStakeModifierV1A = 51197;
         consensus.nBlockStakeModifierV2 = std::numeric_limits<int>::max();
+        consensus.strCarbonOffsetAddress = "TkDutp66Ygp5PpPnrETvfyrtnxq5UevLpo";
         // ATP parameters
-        consensus.ATPStartHeight = consensus.V16DeploymentHeight;
+        consensus.ATPStartHeight = std::numeric_limits<int64_t>::max();
         consensus.WgrAddrPrefix = "wgrtest";
         consensus.strTokenManagementKey = "TkDutp66Ygp5PpPnrETvfyrtnxq5UevLpo";
         consensus.nOpGroupNewRequiredConfirmations = 1;
@@ -762,8 +763,9 @@ public:
         consensus.nStakeMinAge = 60 * 60; // 1 hour
         consensus.nBlockStakeModifierV1A = 1000;
         consensus.nBlockStakeModifierV2 = consensus.V16DeploymentHeight;
+        consensus.strCarbonOffsetAddress = "TkDutp66Ygp5PpPnrETvfyrtnxq5UevLpo";
         // ATP parameters
-        consensus.ATPStartHeight = consensus.V16DeploymentHeight;
+        consensus.ATPStartHeight = std::numeric_limits<int64_t>::max();
         consensus.WgrAddrPrefix = "wgrtest";
         consensus.strTokenManagementKey = "TkDutp66Ygp5PpPnrETvfyrtnxq5UevLpo";
         consensus.nOpGroupNewRequiredConfirmations = 1;
@@ -909,10 +911,10 @@ public:
         consensus.V16DeploymentHeight = 300;
         consensus.BIP34Height = 100000000; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
         consensus.BIP34Hash = uint256();
-        consensus.BIP65Height = consensus.V16DeploymentHeight; // BIP65 activated on regtest (Used in rpc activation tests)
+        consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.DIP0001Height = 2000;
-        consensus.DIP0003Height = 210;
+        consensus.DIP0003Height = 432;
 //        consensus.DIP0003EnforcementHeight = 500;
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 432;
@@ -933,11 +935,12 @@ public:
         consensus.nPosTargetTimespan = 40 * 60; // 40 minutes
         consensus.nPosTargetTimespan_V2 = 2 * consensus.nTimeSlotLength * 60; // 30 minutes
         consensus.nStakeMinDepth = 100;
-        consensus.nStakeMinAge = 0;
-        consensus.nBlockStakeModifierV1A = consensus.nPosStartHeight;
+        consensus.nBlockStakeModifierV1A = 1000;
         consensus.nBlockStakeModifierV2 = consensus.V16DeploymentHeight;
+        consensus.strCarbonOffsetAddress = "TqMgq4qkw7bGxf6CDhtDfEqzEtWD5C7x8U";
+
         // ATP parameters
-        consensus.ATPStartHeight = consensus.V16DeploymentHeight;
+        consensus.ATPStartHeight = std::numeric_limits<int64_t>::max();
         consensus.WgrAddrPrefix = "wgrreg";
         consensus.strTokenManagementKey = "TqMgq4qkw7bGxf6CDhtDfEqzEtWD5C7x8U";
         consensus.nOpGroupNewRequiredConfirmations = 1;
