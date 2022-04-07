@@ -371,7 +371,7 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = consensus.V16DeploymentHeight;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Wagerr: 1 day
         consensus.nPowTargetSpacing = 1 * 60; // Wagerr: 1 minute
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.fPowNoRetargeting = false;
@@ -743,8 +743,8 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 2; // DIP0008 activated immediately on devnet
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Wagerr: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Wagerr: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
 
@@ -827,7 +827,7 @@ public:
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("dashevo.org",  "devnet-seed.dashevo.org"));
+        //vSeeds.push_back(CDNSSeedData("wagerrevo.org",  "devnet-seed.wagerrevo.org"));
 
         // Testnet Wagerr addresses start with 'y'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,65);
@@ -918,8 +918,8 @@ public:
         consensus.DIP0003EnforcementHash = uint256();
         consensus.DIP0008Height = 432;
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-        consensus.nPowTargetTimespan = 24 * 60 * 60; // Dash: 1 day
-        consensus.nPowTargetSpacing = 2.5 * 60; // Dash: 2.5 minutes
+        consensus.nPowTargetTimespan = 24 * 60 * 60; // Wagerr: 1 day
+        consensus.nPowTargetSpacing = 2.5 * 60; // Wagerr: 2.5 minutes
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = true;
 
@@ -1040,7 +1040,7 @@ public:
         // Testnet Wagerr BIP32 prvkeys start with 'DRKP' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = {0x3A, 0x80, 0x58, 0x37};
 
-        // Regtest Dash BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Wagerr BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
 
         // long living quorum params
