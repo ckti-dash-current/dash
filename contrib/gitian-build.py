@@ -185,7 +185,7 @@ def releasenotes():
         subprocess.check_call('mkdir -p '+args.uploadfolder+'/'+args.version+'/release-notes', shell=True)
 
     os.chdir('wagerr')
-    
+
     if args.previousver:
         # Create shortlog notes
         subprocess.check_call('git shortlog --no-merges v'+args.previousver+'..v'+args.version+' > ../wagerr-binaries/'+args.version+'/release-notes/shortlog_v'+args.previousver+'..v'+args.version+'.md', shell=True)

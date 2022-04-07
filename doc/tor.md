@@ -50,8 +50,8 @@ config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. Fo
 versions of Tor see [Section 4](#4-automatically-listen-on-tor).*
 
 	HiddenServiceDir /var/lib/tor/wagerr-service/
-	HiddenServicePort 9999 127.0.0.1:9999
-	HiddenServicePort 19999 127.0.0.1:19999
+	HiddenServicePort 55002 127.0.0.1:55002
+	HiddenServicePort 55004 127.0.0.1:55004
 
 The directory can be different of course, but (both) port numbers should be equal to
 your wagerrd's P2P listen port (9999 by default).
