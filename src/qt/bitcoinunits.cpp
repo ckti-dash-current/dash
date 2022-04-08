@@ -22,7 +22,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(WGR);
     unitlist.append(mWGR);
     unitlist.append(uWGR);
-    unitlist.append(duffs);
+    unitlist.append(sats);
     return unitlist;
 }
 
@@ -33,7 +33,7 @@ bool BitcoinUnits::valid(int unit)
     case WGR:
     case mWGR:
     case uWGR:
-    case duffs:
+    case sats:
         return true;
     default:
         return false;
@@ -49,7 +49,7 @@ QString BitcoinUnits::name(int unit)
             case WGR: return QString("WGR");
             case mWGR: return QString("mWGR");
             case uWGR: return QString::fromUtf8("μWGR");
-            case duffs: return QString("duffs");
+            case sats: return QString("sats");
             default: return QString("???");
         }
     }
@@ -60,7 +60,7 @@ QString BitcoinUnits::name(int unit)
             case WGR: return QString("tWGR");
             case mWGR: return QString("mtWGR");
             case uWGR: return QString::fromUtf8("μtWGR");
-            case duffs: return QString("tduffs");
+            case sats: return QString("tsats");
             default: return QString("???");
         }
     }
@@ -75,7 +75,7 @@ QString BitcoinUnits::description(int unit)
             case WGR: return QString("Wagerr");
             case mWGR: return QString("Milli-Wagerr (1 / 1" THIN_SP_UTF8 "000)");
             case uWGR: return QString("Micro-Wagerr (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Wagerr (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case sats: return QString("Ten Nano-Wagerr (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -86,7 +86,7 @@ QString BitcoinUnits::description(int unit)
             case WGR: return QString("TestWagerrs");
             case mWGR: return QString("Milli-TestWagerr (1 / 1" THIN_SP_UTF8 "000)");
             case uWGR: return QString("Micro-TestWagerr (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestWagerr (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case sats: return QString("Ten Nano-TestWagerr (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -99,7 +99,7 @@ qint64 BitcoinUnits::factor(int unit)
     case WGR:  return 100000000;
     case mWGR: return 100000;
     case uWGR: return 100;
-    case duffs: return 1;
+    case sats: return 1;
     default:   return 100000000;
     }
 }
@@ -111,7 +111,7 @@ int BitcoinUnits::decimals(int unit)
     case WGR: return 8;
     case mWGR: return 5;
     case uWGR: return 2;
-    case duffs: return 0;
+    case sats: return 0;
     default: return 0;
     }
 }

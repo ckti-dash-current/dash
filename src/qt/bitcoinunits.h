@@ -60,7 +60,7 @@ public:
         WGR,
         mWGR,
         uWGR,
-        duffs
+        sats
     };
 
     enum SeparatorStyle
