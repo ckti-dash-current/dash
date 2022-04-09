@@ -50,11 +50,11 @@ config file): *Needed for Tor version 0.2.7.0 and older versions of Tor only. Fo
 versions of Tor see [Section 4](#4-automatically-listen-on-tor).*
 
 	HiddenServiceDir /var/lib/tor/wagerr-service/
-	HiddenServicePort 55002 127.0.0.1:55002
-	HiddenServicePort 55004 127.0.0.1:55004
+	HiddenServicePort 55003 127.0.0.1:55003
+	HiddenServicePort 55005 127.0.0.1:55005
 
 The directory can be different of course, but (both) port numbers should be equal to
-your wagerrd's P2P listen port (9999 by default).
+your wagerrd's P2P listen port (55003 by default).
 
 	-externalip=X   You can tell Wagerr Core about its publicly reachable address using
 	                this option, and this can be a .onion address. Given the above
@@ -89,7 +89,7 @@ as well, use `discover` instead:
 
 	./wagerrd ... -discover
 
-and open port 9999 on your firewall (or use -upnp).
+and open port 55003 on your firewall (or use -upnp).
 
 If you only want to use Tor to reach onion addresses, but not use it as a proxy
 for normal IPv4/IPv6 communication, use:
@@ -99,19 +99,7 @@ for normal IPv4/IPv6 communication, use:
 
 ## 3. List of known Wagerr Core Tor relays
 
-Note: All these nodes are hosted by masternodehosting.com
-
-* l7oq3v7ujau5tfrw.onion
-* vsmegqxisccimsir.onion
-* 4rbha5nrjso54l75.onion
-* 3473226fvgoenztx.onion
-* onn5v3aby2dioicx.onion
-* w5n7s2p3mdq5yf2d.onion
-* ec4qdvujskzasvrb.onion
-* g5e4hvsecwri3inf.onion
-* ys5upbdeotplam3y.onion
-* fijy6aikzxfea54i.onion
-
+None
 
 ## 4. Automatically listen on Tor
 

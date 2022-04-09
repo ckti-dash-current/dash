@@ -37,6 +37,6 @@ VOLUME ["/wagerr"]
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
-EXPOSE 55002 55004 55006 55008
+EXPOSE 55002 55003 55004 55005
 
 WORKDIR /wagerr
