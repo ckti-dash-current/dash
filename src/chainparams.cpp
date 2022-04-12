@@ -934,7 +934,7 @@ public:
         consensus.nPosTargetSpacing = 1 * 60; // 1 minute
         consensus.nPosTargetTimespan = 40 * 60; // 40 minutes
         consensus.nPosTargetTimespan_V2 = 2 * consensus.nTimeSlotLength * 60; // 30 minutes
-        consensus.nStakeMinDepth = 100;
+        consensus.nStakeMinDepth = 1;
         consensus.nBlockStakeModifierV1A = 1000;
         consensus.nBlockStakeModifierV2 = consensus.V16DeploymentHeight;
         consensus.strCarbonOffsetAddress = "TqMgq4qkw7bGxf6CDhtDfEqzEtWD5C7x8U";
