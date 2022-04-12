@@ -575,11 +575,11 @@ public:
         consensus.nStakeMinAge = 60 * 60; // 1 hour
         consensus.nBlockStakeModifierV1A = 51197;
         consensus.nBlockStakeModifierV2 = 826130;
-        consensus.strCarbonOffsetAddress = "TkDutp66Ygp5PpPnrETvfyrtnxq5UevLpo";
+        consensus.strCarbonOffsetAddress = "TrY4A3xFUWjb5Dvn6PJzX8RgZEj8jo6ADE";
         // ATP parameters
         consensus.ATPStartHeight = std::numeric_limits<int64_t>::max();
         consensus.WgrAddrPrefix = "wgrtest";
-        consensus.strTokenManagementKey = "TkDutp66Ygp5PpPnrETvfyrtnxq5UevLpo";
+        consensus.strTokenManagementKey = "TsdKwqnDKEN3N38QG5hTQBNJe6y1mdECy8";
         consensus.nOpGroupNewRequiredConfirmations = 1;
         // Other
         consensus.nCoinbaseMaturity = 15;
@@ -669,7 +669,7 @@ public:
         nPoolMaxParticipants = 20;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-        vSporkAddresses = {"TNV3YwvMaD7qBASs6KjPTdYiC8GjqeQosm"}; // 04d23d4179050244bfeff9f03ab4117e79a8835a9c0aba21b6df8d9e31042cc3b76bcb323a6e3a0e87b801ba2beef2c1db3a2a93d62bdb2e10192d8807f27e6f33
+        vSporkAddresses = {"TNV3YwvMaD7qBASs6KjPTdYiC8GjqeQosm"};
         nMinSporkKeys = 1;
         fBIP9CheckMasternodesUpgraded = true;
 
