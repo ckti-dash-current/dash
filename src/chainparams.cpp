@@ -11,7 +11,6 @@
 #include <tinyformat.h>
 #include <util.h>
 #include <utilstrencodings.h>
-#include <typeinfo>
 
 #include <arith_uint256.h>
 
@@ -78,7 +77,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "RT 15/Feb/2018 12.03 GMT - Soros brands bitcoin nest egg for dictators, but still invests in it";
-    const CScript genesisOutputScript = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("046013426db3d877adca7cea18ebeca33e88fafc53ab4040e0fe1bd0429712178c10571dfed6b3f1f19bcff0805cdf1c798e7a84ef0f5e0f4459aabd7e94ced9e6") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -447,11 +446,9 @@ public:
 
         genesis = CreateGenesisBlock(1518696181, 96620932, 0x1e0ffff0, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-       //  throw std::runtime_error(strprintf("Genesis:0x%x\n", consensus.hashGenesisBlock));
-        strprintf(typeid(genesis).name());
 
-        assert(consensus.hashGenesisBlock == uint256S("0x000004995e38d4b32fdde932ece92731bd621a7117f8a1dcda03ee5c11f960d9"));
-        assert(genesis.hashMerkleRoot == uint256S("0xe10ae750795e832b7e587ccc72a5370f958b96c41d987c3babc3fda253601a71"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000007b9191bc7a17bfb6cedf96a8dacebb5730b498361bf26d44a9f9dcc1079"));
+        assert(genesis.hashMerkleRoot == uint256S("0xc4d06cf72583752c23b819fa8d8cededd1dad5733d413ea1f123f98a7db6af13"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
