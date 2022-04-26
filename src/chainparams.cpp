@@ -11,6 +11,7 @@
 #include <tinyformat.h>
 #include <util.h>
 #include <utilstrencodings.h>
+#include <string>
 
 #include <arith_uint256.h>
 
