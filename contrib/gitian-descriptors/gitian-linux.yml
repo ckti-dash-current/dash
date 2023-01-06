@@ -98,6 +98,10 @@ script: |
   done
   }
 
+  export PATH=${WRAP_DIR}:${PATH}
+  EXTRA_INCLUDES_BASE=$WRAP_DIR/extra_includes
+  mkdir -p $EXTRA_INCLUDES_BASE
+
   # x86 needs /usr/include/i386-linux-gnu/asm pointed to /usr/include/x86_64-linux-gnu/asm,
   # but we can't write there. Instead, create a link here and force it to be included in the
   # search paths by wrapping gcc/g++.
